@@ -2,7 +2,7 @@
 
 > '仿小米商城'
 
-## technology stack
+## Technology Stack
 
 基本是使用的Vue全家桶
 
