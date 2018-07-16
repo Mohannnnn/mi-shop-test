@@ -10,7 +10,19 @@ export default new Router({
     {
       path: '/',
       name: 'HelloWorld',
-      component: HelloWorld
+      component(resolve){
+        require.ensure([] , () => resolve(require('@/components/HelloWorld')))
+      }
+    },
+    {
+      path : '/home',
+      name : 'home',
+      // component : () => import('@/views/home.vue')
+      // component : (resolve) => require(['@/views/home.vue'] ,resolve)
+      // component(resolve){ require.ensure([] , () => resolve(require('@/views/home.vue')))}
+      component(resolve) {
+        require.ensure([] , resolve(require('@/views/home')))
+      }
     }
   ]
 })
