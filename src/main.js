@@ -15,6 +15,7 @@ Vue.use(VueLazyload , {
 })
 
 router.beforeEach((to , from ,next) => {
+
   next();
 })
 /* eslint-disable no-new */
