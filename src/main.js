@@ -15,7 +15,7 @@ Vue.use(VueLazyload , {
 })
 
 router.beforeEach((to , from ,next) => {
-
+  store.commit('MODIFY_STATUS' , 'loading')
   next();
 })
 /* eslint-disable no-new */

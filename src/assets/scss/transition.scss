@@ -1,0 +1,56 @@
+/*
+ * @Author: wuhan 
+ * @Date: 2018-07-23 20:05:06 
+ * @Last Modified by: wuhan
+ * @Last Modified time: 2018-07-23 20:16:17
+ */
+
+@import './util.scss';
+.slide-go-enter-active,
+.slide-go-leave-active,
+.slide-back-enter-active,
+.slide-back-leave-active {
+  @include tran-transform;
+}
+
+.slide-go-enter {
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+
+// .slide-go-enter-to {
+//   -webkit-transform: translate3d(0%, 0, 0);
+//   transform: translate3d(0%, 0, 0);
+// }
+
+.slide-go-leave {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+// .slide-go-leave-to {
+//   -webkit-transform: translate3d(-100%, 0, 0);
+//   transform: translate3d(-100%, 0, 0);
+// }
+
+
+.slide-back-enter {
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+
+// .slide-back-enter-to {
+//   -webkit-transform: translate3d(0%, 0, 0);
+//   transform: translate3d(0%, 0, 0);
+// }
+
+.slide-back-leave {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+// .slide-back-leave-to {
+//   -webkit-transform: translate3d(100%, 0, 0);
+//   transform: translate3d(100%, 0, 0);
+// }
+

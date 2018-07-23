@@ -1,0 +1,202 @@
+/*
+ * @Author: wuhan `
+ * @Date: 2018-07-23 15:07:38 
+ * @Last Modified by: wuhan
+ * @Last Modified time: 2018-07-23 20:19:03
+ */
+@charset "UTF-8";
+@import './util.scss';
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+ul,
+li,
+input,
+span,
+a,
+i {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "microsoft yahei", "HanHei SC", "PingHei", "PingFang SC", "STHeitiSC-Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+img {
+  border: none;
+  vertical-align: top;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea,
+button {
+  outline: none;
+  -webkit-appearance: none;
+}
+
+textarea {
+  resize: none;
+  overflow: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.clear {
+  zoom: 1;
+}
+
+.clear:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.fl,
+.pull-left {
+  float: left;
+}
+
+.fr,
+.pull-right {
+  float: right;
+}
+
+.section {
+  width: 100%;
+  position: relative;
+}
+
+.section-center {
+  padding: 0 0.413rem;
+  position: relative;
+}
+
+.full {
+  width: 100%;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.noscroll::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+ul,
+li,
+input,
+span,
+a,
+i {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+html {
+  font-size: -webkit-calc(10vw);
+  font-size: calc(10vw);
+}
+
+body {
+  position: relative;
+  background-color: #F5F5F5;
+}
+
+.app-init {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.scroll-box {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+.scroll-box-x {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+}
+
+// 底部导航选项
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.08rem;
+  background-color: #fff;
+  font-size: 0;
+  transform: translateY(0);
+  -webkit-transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1);
+  @include box-sizing;
+  .footer-item {
+    display: inline-block;
+    width: 25%;
+    font-size: 0.24rem;
+    padding-top: .1rem;
+    padding-bottom: .08rem;
+    text-align: center;
+    color: #999;
+    .icon{
+      font-size: 0.45rem;
+    }
+  }
+  .footer-item.active {
+    color: #ff6700;
+  }
+}
