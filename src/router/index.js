@@ -11,20 +11,34 @@ export default new Router({
       redirect : '/home'
     },
     {
-      path: '/home',
-      name: 'home',
-      component(resolve){
-        require.ensure([] , () => resolve(require('@/views/home')))
-      }
-    },
-    {
       path : '/home',
       name : 'home',
       // component : () => import('@/views/home.vue')
       // component : (resolve) => require(['@/views/home.vue'] ,resolve)
       // component(resolve){ require.ensure([] , () => resolve(require('@/views/home.vue')))}
       component(resolve) {
-        require.ensure([] , resolve(require('@/views/home')))
+        require.ensure([] , () => resolve(require('@/views/home')))
+      }
+    },
+    {
+      path: '/classify',
+      name: 'classify',
+      component(resolve){
+        require.ensure([] , () => resolve(require('@/views/classify')))
+      }
+    },
+    {
+      path : '/shoppingcar',
+      name : 'shoppingcar',
+      component(resolve) {
+        require.ensure([] , () => resolve(require('@/views/shoppingcar')))
+      }
+    },
+    {
+      path : '/mine',
+      name : 'mine',
+      component(resolve) {
+        require.ensure([] , () => resolve(require('@/views/mine')))
       }
     }
   ]

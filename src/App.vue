@@ -1,61 +1,56 @@
-/* * @Author: wuhan * @Date: 2018-07-23 11:23:30 * @Last Modified by: wuhan * @Last Modified time: 2018-07-23 13:50:52 */
 <template>
   <div id="app">
     <transition :name="transitionType">
       <router-view></router-view>
     </transition>
+
     <footer class="footer">
       <ul>
-        <li class="footer-item" :class="{'active' : isActive()}">
+        <router-link  v-for="(item ,  index) in liData" :tag="tag" :to="item.url" :key="index" class="footer-item" :class="{'active' : isActive(item.url)}">
           <div class="icon">
-            <span class="iconfont icon-shouye"></span>
+            <span :class="`iconfont ${item.icon}`"></span>
           </div>
-          <div class="name">首页</div>
-        </li>
-        <li class="footer-item">
-          <div class="icon">
-            <span class="iconfont icon-fenlei"></span>
-          </div>
-          <div class="name">分类</div>
-        </li>
-        <li class="footer-item">
-          <div class="icon">
-            <span class="iconfont icon-gouwuche"></span>
-          </div>
-          <div class="name">购物车</div>
-        </li>
-        <li class="footer-item">
-          <div class="icon">
-            <span class="iconfont icon-smile"></span>
-          </div>
-          <div class="name">我的</div>
-        </li>
+          <div class="name">{{ item.name }} </div>
+        </router-link>
       </ul>
     </footer>
   </div>
 </template>
 
 <script>
-import Rem from '@/assets/js/rem'
+import Rem from '@/assets/js/rem';
+import { mapGetters } from 'Vuex';
 new Rem();
 
 export default {
   name: "App",
   data() {
     return {
+      tag : 'li',
+      nowUrl : '/home',
+      liData : [
+        { name : '首页' , url : '/home' , icon : 'icon-shouye'} ,
+        { name : '分类' , url : '/classify' , icon : 'icon-fenlei'},
+        { name : '购物车' , url : '/shoppingcar' , icon : 'icon-gouwuche'},
+        { name : '我的' , url : '/mine' , icon : 'icon-smile'}
+      ],
       transitionType : 'slide-go'
     };
   },
   methods : {
-    isActive() {
-
+    isActive(url) {
+      return this.nowUrl.indexOf(url) != -1;
     }
   },
   watch : {
-
+    '$route'(to , from) {
+      console.log(to)
+      console.log(from)
+      this.nowUrl = to.fullPath;
+    }
   },
   computed : {
-    
+    ...mapGetters(['getNowStatus'])
   }
 };
 </script>

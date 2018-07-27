@@ -19,11 +19,15 @@ const AppLoading = {
   },
   mutations : {
     MODIFY_STATUS(state , data){
-      state.nowStatus = data
+      state.nowStatus = data;
+    }
+  },
+  getters : {
+    getNowStatus(state) {
+      return state.nowStatus;
     }
   }
 }
-
 
 export default new Vuex.Store({
   modules : {
