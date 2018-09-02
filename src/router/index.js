@@ -19,11 +19,12 @@ export default new Router({
                 require.ensure([], () => resolve(require('@/views/home')))
             },
             children: [{
-                path: 'a',
-                name: 'a',
+                path: ':id',
+                name: 'index',
                 component(resolve) {
-                    require.ensure([], () => resolve(require('@/views/classify')))
-                }
+                    require.ensure([], () => resolve(require('@/views/home/index')))
+                },
+                props: true
             }]
         },
         {
